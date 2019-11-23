@@ -8,3 +8,11 @@ FUTURE PLANS FOR 11/23/19
 * transplant automated pup code e.g. foodfound to this project
 
 * link list for dirs
+
+*11/30/19 make it more efficient
+-do a case where there is one food and see how dog gets there
+-
+-
+-
+-
+-

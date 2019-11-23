@@ -31,19 +31,21 @@ public class Mutt extends Node {
 	
 	public void displayMem() {
 		
-		System.out.print("\n \n \n PUP'S MEMORY DISPLAYED");
-		System.out.print("\n \n \n PUP'S TOTAL FOOD COUNT: "  + this.eaten);
+	//	System.out.print("\n \n \n PUP'S MEMORY DISPLAYED");
+		
 		
 		for(Post p: this.mem) {
 			System.out.println(p);
 		}
+		
+		System.out.print("\n \n \n PUP'S TOTAL FOOD COUNT: "  + this.eaten);
 	}
 	
 	
 	public Node[][] copyWorld(Node[][] arr) {
 		
 		//creates copy of world for pup to do flood fill for
-		System.out.print("***** THE COPIED WORLD FOR PUP *******");
+	//	System.out.print("***** THE COPIED WORLD FOR PUP *******");
 		for (int row=0; row < arr.length; row++) {
 			
 			System.out.println("");
@@ -65,7 +67,7 @@ public class Mutt extends Node {
 	
 	public void displayCPupPos() {
 		
-		System.out.print("\n \n \n PUP'S current position" + this.row + ", " + this.col);
+		//System.out.print("\n \n \n PUP'S current position" + this.row + ", " + this.col);
 	}
 	
 	
@@ -111,7 +113,6 @@ public class Mutt extends Node {
 			this.mem.add(p);
 			
 			if (p.equals(check)) {
-				System.out.println("\n This pup has already been at " + R + ", " + C);
 				return false;
 			}
 		
@@ -131,22 +132,22 @@ public class Mutt extends Node {
 		switch (dir) {
 		
 		case 0:
-			System.out.print("Pup spawns to the right or EAST");
+			//System.out.print("Pup spawns to the right or EAST");
 			
 			cC = this.col +1;
 			break;
 		case 1:
-			System.out.print("Pup spawns to the up or NORTH");
+			//System.out.print("Pup spawns to the up or NORTH");
 			cR = this.row-1;
 		
 			break;
 		case 2:
-			System.out.print("Pup spawns to the left or WEST");
+			//System.out.print("Pup spawns to the left or WEST");
 	
 			cC = this.col -1;
 			break;
 		case 3:
-			System.out.print("Pup spawns to the down or SOUTH");
+		//	System.out.print("Pup spawns to the down or SOUTH");
 			cR = this.row+1;
 	
 			break;
@@ -156,14 +157,13 @@ public class Mutt extends Node {
 		}
 		
 		
-		System.out.println("\n the row pupppy is at is " + this.row + " and the col is " + this.col);
-		
-		System.out.println("\n the row the program is checking is " + cR + " and the col is checking " + cC);
+	//	System.out.println("\n the row pupppy is at is " + this.row + " and the col is " + this.col);
+	//	System.out.println("\n the row the program is checking is " + cR + " and the col is checking " + cC);
 		
 		
 		
 		if (cR >= Main.world.length || cR < 0 || cC <0 || cC >= Main.world[0].length) {
-			System.out.println("THERE IS NO WORLD AND PUP WILL FALL INTO NOTHINGNESS.");
+		//	System.out.println("THERE IS NO WORLD AND PUP WILL FALL INTO NOTHINGNESS.");
 			
 			this.stuckCur++;
 			if (this.stuckCur >= this.stuckMax) this.stucker = true; 
@@ -176,7 +176,7 @@ public class Mutt extends Node {
 		Node ground = Main.world[cR][cC];
 		
 		int c = ground.contains;
-		System.out.println("We found " + Loader.legend.get(c));
+		//System.out.println("We found " + Loader.legend.get(c));
 		//end of part 1
 		
 		
@@ -184,12 +184,12 @@ public class Mutt extends Node {
 		
 	
 			if (this.verifyNotInMem(dir) && c!=1 && c!=5 ) {
-				System.out.println("We found " + Loader.dirmap[dir]);
+			//	System.out.println("We found " + Loader.dirmap[dir]);
 				
 				return true;
 				
 			}  else {
-				System.out.println(" \n been here! Don't want to go there");
+		//		System.out.println(" \n been here! Don't want to go there");
 				//this.stuckCur++;
 				
 				//if (this.stuckCur >= this.stuckMax) this.stucker = true;
@@ -207,7 +207,7 @@ public class Mutt extends Node {
 		for (int di =0; di<4; di++) {
 			
 			if (this.canIWalkThere(di)) {
-				System.out.print("If I can walk to " + Loader.dirmap[dir] + ", I will respawn.");
+				//System.out.print("If I can walk to " + Loader.dirmap[dir] + ", I will respawn.");
 				
 				int cR = this.row;
 				int cC = this.col;
@@ -216,22 +216,22 @@ public class Mutt extends Node {
 				switch (di) {
 				
 				case 0:
-					System.out.print("Pup spawns to the right or EAST");
+			//		System.out.print("Pup spawns to the right or EAST");
 					
 					cC = this.col +1;
 					break;
 				case 1:
-					System.out.print("Pup spawns to the up or NORTH");
+			//		System.out.print("Pup spawns to the up or NORTH");
 					cR = this.row-1;
 				
 					break;
 				case 2:
-					System.out.print("Pup spawns to the left or WEST");
+			//		System.out.print("Pup spawns to the left or WEST");
 			
 					cC = this.col -1;
 					break;
 				case 3:
-					System.out.print("Pup spawns to the down or SOUTH");
+			//		System.out.print("Pup spawns to the down or SOUTH");
 					cR = this.row+1;
 			
 					break;
@@ -260,7 +260,7 @@ public class Mutt extends Node {
 				
 				Main.world[cR][cC] = dupli;
 				
-				System.out.print("the spawn will start walking like the original pup");
+				//System.out.print("the spawn will start walking like the original pup");
 				dupli.walkRecursive();
 				
 				

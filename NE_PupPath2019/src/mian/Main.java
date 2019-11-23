@@ -7,15 +7,21 @@ public class Main {
 
 	public static Mutt pup;
 	
-	public static Node[][] world = new Node[12][17];
+	public static int randColN = (int) ( Math.random() * 20);
+	public static int randRowN =  (int) ( Math.random() * 20);
+	
+	
+	
+	public static Node[][] world = new Node[randRowN][randColN];
 	
 	
 	public static void main(String[] args) {
+		
 		System.out.print("Welcome to pup path!");
 		init();
 		
 		Mutt tester = new Mutt(pup.row, pup.col, "Aladdin", pup.mem);
-		System.out.println("\n\n the mutt's abbreviation is D");
+		//System.out.println("\n\n the mutt's abbreviation is D");
 		world[pup.row][pup.col] = tester;
 		
 		tester.walkRecursive();
@@ -81,6 +87,7 @@ public class Main {
 	public static void pupulateMaze() {
 		
 		
+		
 		for (int row=0; row < world.length; row++) {
 			for (int col =0; col < world[0].length;col++) {
 				int rand = (int) (Math.random() * 3);
@@ -112,7 +119,7 @@ public class Main {
 			
 		}
 		
-		System.out.println("\n the pup's row is " + pup.row + " and its col is " + pup.col);
+		//System.out.println("\n the pup's row is " + pup.row + " and its col is " + pup.col);
 
 	}
 	
