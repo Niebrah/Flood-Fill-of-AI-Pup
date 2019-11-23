@@ -1,0 +1,10 @@
+FUTURE PLANS FOR 11/23/19
+
+
+* Jpanel for dog
+
+*  arraylist for storing possible food paths with ints representing directin
+
+* transplant automated pup code e.g. foodfound to this project
+
+* link list for dirs
